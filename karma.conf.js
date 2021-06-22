@@ -8,6 +8,16 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+
+      // npm install --save-dev karma-firefox-launcher karma-safari-launcher
+      // ver mais abaixo!
+      // ver também os scripts de teste no package.json
+      require('karma-firefox-launcher'),
+      require('karma-safari-launcher'),
+
+      // npm install --save-dev karma-junit-reporter
+      require('karma-junit-reporter'),
+
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -37,8 +47,16 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome', /*'Firefox'*/],  // indicando os browsers
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+
+    // ng test --watch=false --browsers FirefoxSemCabeca
+    customLaunchers: {
+      FirefoxSemCabeca: {
+        base: 'Firefox',
+        flags: ['-headless']
+      }
+    }
   });
 };

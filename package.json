@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test-common": "ng test --browsers Chrome,Firefox",
+    "test-ci": "ng test --watch=false --reporters junit --browsers ChromeHeadless,FirefoxHeadless",
+    "test-custom-launcher": "ng test --watch=false --browsers FirefoxSemCabeca",
+    "test-coverage": "ng test --watch=false --sourceMap=true --codeCoverage=true --browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -18,8 +22,14 @@
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
+    "@fortawesome/angular-fontawesome": "^0.9.0",
+    "@fortawesome/fontawesome-common-types": "^0.2.35",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "rxjs": "~6.6.0",
+    "save": "^2.4.0",
     "tslib": "^2.1.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -28,12 +38,16 @@
     "@angular/compiler-cli": "~12.0.4",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@types/uuid": "^8.3.0",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
+    "karma-firefox-launcher": "^2.1.1",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-junit-reporter": "^2.0.1",
+    "karma-safari-launcher": "^1.0.0",
     "typescript": "~4.2.3"
   }
 }
