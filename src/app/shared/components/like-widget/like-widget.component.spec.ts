@@ -34,6 +34,10 @@ describe(LikeWidgetComponent.name, () => {
 
   it('should create component', () => {
     expect(component).toBeTruthy();
+
+    // São o mesmo objeto
+    // debugElement fornece alguns métodos de procura atrelados ao Angular (ver action.directive.spec.ts)
+    expect(fixture.nativeElement).toBe(fixture.debugElement.nativeElement);
   });
 
   it('should auto generate an ID during ngOnInit when (@Input id) is not assigned', () => {

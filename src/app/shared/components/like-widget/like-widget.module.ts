@@ -1,3 +1,4 @@
+import { ActionDirectiveModule } from './../../directives/action/action.module';
 import { LikeWidgetComponent } from './like-widget.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
@@ -8,7 +9,8 @@ import { UniqueIdService } from '../../services/unique-id/unique-id.service';
   declarations: [LikeWidgetComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule // :)
+    FontAwesomeModule, // :)
+    ActionDirectiveModule
   ],
   exports: [LikeWidgetComponent],
   providers: [UniqueIdService]

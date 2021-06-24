@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'testes';
-  likes = 0;
+  title = 'Testes Com Angular';
 
-  like() {
-    this.likes++;
-  }
 }

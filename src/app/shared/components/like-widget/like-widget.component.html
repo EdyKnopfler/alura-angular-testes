@@ -1,11 +1,9 @@
-<div class="like-widget-container" (click)="like()">
+<div class="like-widget-container" (appAction)="like()">
   <fa-icon
     [icon]="fonts.faThumbsUp"
-    tabindex="0"
 
+    tabindex="0"
     role="button"
-    (keyup.enter)="like()"
-    (keyup.space)="like()"
     [attr.aria-describedby]="id"
 
     ></fa-icon>
@@ -16,8 +14,10 @@
   -->
   <span
     [attr.id]="id"
-    [attr.aria-label]="likes + 'people liked'"
+    [attr.aria-label]="likes + ' people liked'"
     aria-live="true"
     aria-atomic="true"
-    class="like-counter">{{ likes }}</span>
+    class="like-counter">
+    {{ likes }}
+  </span>
 </div>
